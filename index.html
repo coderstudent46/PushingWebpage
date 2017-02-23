@@ -89,7 +89,52 @@ button {
     background: salmon;
     background-size: cover;
 }
-
+ @keyframes moveit {
+    0% {background-color:orange; left:0px; top:0px;}
+    25% {background-color:purple; left:200px; top:0px;}
+    50% {background-color:green; left:1000px; top:600px;}
+    75% {background-color:blue; right:100px; top:200px;}
+    100% {background-color:orange; left:0px; top:1000px;}
+}
+ 
+/* Pulse */
+@-webkit-keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+@keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+.hvr-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+.hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {
+  -webkit-animation-name: hvr-pulse;
+  animation-name: hvr-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
 
 </style>
 </head>
@@ -104,7 +149,7 @@ button {
     <div class="home-tagline">
         <h3 class="home-h3">There's snow reason to put anything here. I think that's ice. Oh come on, don't give me the cold shoulder.</h3>
     </div>
-    <button>More puns...</button>
+    <button class="hvr-pulse moveit">More puns...</button>
     
 </div>
 <!-- END OF HOMEPAGE -->
